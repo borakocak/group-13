@@ -7,7 +7,7 @@ const unsigned int MAX_DISTANCE = 1000;
 const auto pulsesPerMeter = 600;
 int initialSensorDistance = 0;
 int laterSensorDistance =0;
-
+int FrontDistance = 0;
 ArduinoRuntime arduinoRuntime;
 BrushedMotor leftMotor(arduinoRuntime, smartcarlib::pins::v2::leftMotorPins);
 BrushedMotor rightMotor(arduinoRuntime, smartcarlib::pins::v2::rightMotorPins); 
@@ -66,12 +66,12 @@ void handleInput()
  
 void loop()
 {
-    
+    FrontDistance = front.getDistance();
     Serial.print("Distance with front obstacle:");
-    Serial.println(front.getDistance());
-    delay(200);
+    Serial.println(FrontDistance);
+    delay(200);// This delay for not print frequently
     car.update(); // Maintain the speed
-    if(front.getDistance()<=180&& movingSituation() && front.getDistance()>0)
+    if(FrontDistance <= 180&& movingSituation() && FrontDistance >0)
     {
       car.setSpeed(0);
     }
