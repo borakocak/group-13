@@ -9,7 +9,7 @@ The main objective of this software is to utilize and demonstrate the use of a r
 Aid the driver with more information about surroundings located around the car.It also reduces human error and time during the  operation.For example, It helps people park the car and give suggestions when people are controlling the car.It contains autonomous driving which allows the car to park by itself.
 
 # How ? 
-We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA¡¯s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
+We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TAâ€™s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
 
 # Technology 
 - C++
