@@ -9,27 +9,66 @@
 
     <Button
         android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="118dp"
+        android:layout_height="59dp"
+        android:layout_above="@+id/forward"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:layout_marginBottom="533dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginRight="147dp"
+        android:layout_marginBottom="118dp"
         android:text="Connect" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/forward"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="165dp"
-        android:layout_marginRight="165dp"
-        android:layout_marginBottom="300dp"
-        android:onClick="pub"
-        android:text="pub" />
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="309dp"
+        android:onClick="forward"
+        android:text="Forward" />
+
+    <Button
+        android:id="@+id/Return"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="129dp"
+        android:onClick="r_eturn"
+        android:text="Return" />
+
+    <Button
+        android:id="@+id/turnLeft"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginBottom="222dp"
+        android:onClick="turnLeft"
+        android:text="TurnLeft" />
+
+    <Button
+        android:id="@+id/turnRight"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        android:layout_marginBottom="222dp"
+        android:onClick="turnRight"
+        android:text="TurnRight" />
 
 </RelativeLayout>

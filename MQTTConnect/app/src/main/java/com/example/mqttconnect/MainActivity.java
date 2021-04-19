@@ -3,7 +3,7 @@ package com.example.mqttconnect;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -18,10 +18,10 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 public class MainActivity extends AppCompatActivity {
     private Button btn1;
 
-    static String MQTTHOST = "tcp://broker.hivemq.com:8000";
-    static String USERNAME = "admin";
-    static String PASSWORD = "123456";
-    String topicStr = "mother/fucker";
+    static String MQTTHOST = "tcp://broker.hivemq.com:1883";
+    static String USERNAME = "";
+    static String PASSWORD = "";
+    String topicStr = "smart/car";
 
     MqttAndroidClient client;
 
@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 MqttConnectOptions options = new MqttConnectOptions();
-                options.setUserName(USERNAME);
-                options.setPassword(PASSWORD.toCharArray());
+                //options.setUserName(USERNAME);//set the username
+                //options.setPassword(PASSWORD.toCharArray());//set the username
 
 
 
@@ -48,12 +48,13 @@ public class MainActivity extends AppCompatActivity {
                         clientId);
 
                 try {
-                    IMqttToken token = client.connect(options);
+                    //IMqttToken token = client.connect(options);
+                    IMqttToken token = client.connect();
                     token.setActionCallback(new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
                             // We are connected
-                            Toast.makeText(MainActivity.this,"connected",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this,"Connected",Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -75,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void pub (View v){
+    public void forward (View v){
         String topic = topicStr;
-        String message = "Hello";
+        String message = "70";
         try {
             client.publish(topic, message.getBytes(),0,false);
         } catch (MqttException e) {
@@ -86,4 +87,46 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    public void r_eturn (View v){
+        String topic = topicStr;
+        String message = "-70";
+        try {
+            client.publish(topic, message.getBytes(),0,false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void turnLeft (View v){
+        String topic = topicStr;
+        String message = "-50";
+        try {
+            client.publish(topic, message.getBytes(),0,false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+    public void turnRight (View v){
+        String topic = topicStr;
+        String message = "50";
+        try {
+            client.publish(topic, message.getBytes(),0,false);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
+
+
+
 }
