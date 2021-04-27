@@ -1,67 +1,32 @@
-#include<WiFi.h>
-#include<MQTT.h>
-#include<Smartcar.h>
+#include <MQTT.h>
+#include <WiFi.h>
 
-
-
-
-
-char ssid[] = "GOD  BLESS YOU";
-char pass[] = "55555555";
-//char clientID[] = "";
-//char username[] = "";
-//char password[] = "";
-char topic[] = "smart/car";
-char host[] = "broker.hivemq.com";
-int port = 1883;
-
-WiFiClient net;
 MQTTClient mqtt;
 
-
-void connect() {
-  Serial.print("checking wifi...");
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(1000);
-  }
-
-  Serial.print("\nconnecting...");
-  while (!mqtt.connect("arduino")) {
-    Serial.print(".");
-    delay(1000);
-  }
-
-  Serial.println("\nconnected!");
-
-  mqtt.subscribe(topic);
-  // client.unsubscribe("/hello");
-}
-
-void messageReceived(String &topic, String &payload) {
-  Serial.println("incoming: " + topic + " - " + payload);
-
-}
+const char host[] = "broker.emqx.io";
+const char topic[] = "/smart/car";
 
 
 
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  WiFi.begin(ssid, pass);
-  mqtt.begin(host,net);
-  mqtt.onMessage(messageReceived);
-
-  connect();
- 
-  
+    Serial.begin(9600);
+    mqtt.begin(host, 1883, WiFi);
+    //this is connect to the broker.
+    //Will connect to localhost port 1883 be default
+    
+    if (!mqtt.connected()) {
+        mqtt.connect("arduino");  
+        mqtt.subscribe(topic,0);
+        mqtt.onMessage([](String topic, String message){
+        Serial.println("incoming: " + topic + "message: " + message);
+      });
+      
+    }//this is a callback
+       
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  mqtt.loop();
 
-  if (!mqtt.connected()) {
-    connect();
-  }
+    mqtt.loop();//this is keeping the mqtt is running
+    delay(35); 
 }

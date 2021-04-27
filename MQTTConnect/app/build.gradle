@@ -29,14 +29,17 @@ android {
 }
 repositories {
     maven {
-        url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        //url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
     }//paho
 }
 dependencies {
 
-    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
-        exclude module: 'support-v4'
-    }//paho
+//    compile('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+//        exclude module: 'support-v4'
+//    }//paho
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
     implementation 'com.android.support:support-v4:4.1.3'
 

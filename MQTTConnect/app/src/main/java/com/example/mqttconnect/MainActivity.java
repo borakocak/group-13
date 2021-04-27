@@ -18,10 +18,10 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 public class MainActivity extends AppCompatActivity {
     private Button btn1;
 
-    static String MQTTHOST = "tcp://broker.hivemq.com:1883";
+    static String MQTTHOST = "tcp://broker.emqx.io:1883";
     static String USERNAME = "";
     static String PASSWORD = "";
-    String topicStr = "smart/car";
+    String topicStr = "/smart/car";
 
     MqttAndroidClient client;
 
