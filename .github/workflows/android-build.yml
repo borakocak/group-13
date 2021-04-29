@@ -12,7 +12,7 @@ jobs:
           java-version: 1.8
       - name: Clone Repo
         uses: actions/checkout@v2
-      - name: Build SmartcarMqttController
+      - name: Build MQTTConnect
         run: |
           cd Basic_obstacle_avoidance/MQTTConnect
           ./gradlew build --stacktrace
@@ -25,17 +25,17 @@ jobs:
           java-version: 1.8
       - name: Clone Repo
         uses: actions/checkout@v2
-      - name: Run unit tests for SmartcarMqttController
+      - name: Run unit tests for MQTTConnect
         run: |
-          cd android/SmartcarMqttController
+          cd Basic_obstacle_avoidance/MQTTConnect
           ./gradlew test --info
   run-instrumented-tests:
     runs-on: macos-latest
     steps:
       - name: Clone Repo
         uses: actions/checkout@v2
-      - name: Run instrumented tests for SmartcarMqttController
+      - name: Run instrumented tests for MQTTConnect
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
-          script: cd android/SmartcarMqttController && ./gradlew connectedAndroidTest
+          script: cd Basic_obstacle_avoidance/MQTTConnect && ./gradlew connectedAndroidTest
