@@ -8,4 +8,6 @@
     <string name="speed">\@speed</string>
     <string name="speednumber">\@speednumber</string>
     <string name="speednum">\@speednum</string>
+    <string name="Username">\@username</string>
+    <string name="Password">\@password</string>
 </resources>
