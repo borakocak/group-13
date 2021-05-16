@@ -14,8 +14,8 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="395dp"
-        android:layout_height="263dp"
+        android:layout_width="320dp"
+        android:layout_height="240dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -27,7 +27,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:contentDescription="@string/camera_view"
-        app:srcCompat="@drawable/street" />
+         />
 
     <TextView
         android:id="@+id/textView2"
@@ -107,6 +107,8 @@
         android:backgroundTint="#F00"
         android:text="Connect"
         android:textColor="@color/white" />
+
+
 
 
 </RelativeLayout>

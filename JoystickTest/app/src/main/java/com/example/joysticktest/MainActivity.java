@@ -2,18 +2,24 @@ package com.example.joysticktest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,14 +34,19 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     static String MQTTHOST = "tcp://broker.emqx.io:1883";
     static String USERNAME = "";
     static String PASSWORD = "";
+    private static final int IMAGE_WIDTH = 320;
+    private static final int IMAGE_HEIGHT = 240;
     private String topic = "/Group/13";
     private String moveTopic = "/Group/13/Move";
     private String turnTopic = "/Group/13/Turn";
     private String cruiseTopic = "/Group/13/CruiseControl";
+    private String cameraTopic = "/Group/13/Camera";
     private String moveMessage;
     private String turnMessage;
     public Queue<Float> yDataPackage = new LinkedList<>();
     public Queue<Float> xDataPackage = new LinkedList<>();
+
+
 
 
 
@@ -48,6 +59,22 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView camera = (ImageView)findViewById(R.id.imageView4);
+
+        camera.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    cameraView(cameraTopic, camera);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+
 
         Button btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -85,17 +112,57 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
                     e.printStackTrace();
                 }
 
+
+
             }
+
+
+
+
+
         });
 
 
 
 
+    }
+
+    public void cameraView(String topic,ImageView camera) throws MqttException {
 
 
+        client.subscribe(topic, 0);
+        client.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
 
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                final Bitmap bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
+
+                final byte[] payload = message.getPayload();
+                final int[] colors = new int[IMAGE_WIDTH * IMAGE_HEIGHT];
+                for (int ci = 0; ci < colors.length; ++ci) {
+                    final byte r = payload[3 * ci];
+                    final byte g = payload[3 * ci + 1];
+                    final byte b = payload[3 * ci + 2];
+                    colors[ci] = Color.rgb(r, g, b);
+                }
+                bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+                camera.setImageBitmap(bm);
+
+                Log.e(topic, "[MQTT] Topic: " + topic + " | Message: " + message.toString());
+
+            }
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+
+            }
+        });
 
     }
+
     public float rectifier(float Percent){
         ArrayList<Float> Pivot = new ArrayList<>();
 
