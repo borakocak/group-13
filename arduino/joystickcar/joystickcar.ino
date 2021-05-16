@@ -84,10 +84,10 @@ void loop()
     //Serial.println(FrontDistance);
     delay(200);// This delay for not print frequently
     car.update(); // Maintain the speed
-    if(FrontDistance <= 180&& movingSituation() && FrontDistance >0)
-    {
-      car.setSpeed(0);
-    }
+//    if(FrontDistance <= 180&& movingSituation() && FrontDistance >0)
+//    {
+//      car.setSpeed(0);
+//    }
 
     mqtt.loop();
     
