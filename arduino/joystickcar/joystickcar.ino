@@ -1,7 +1,15 @@
+#include <vector>
 #include <Smartcar.h>
 #include <MQTT.h>
 #include <WiFi.h>
+#ifdef __SMCE__
+#include <OV767X.h>
+#endif
 
+
+#ifndef __SMCE__
+WiFiClient net;
+#endif
 
 MQTTClient mqtt;
 
@@ -18,6 +26,7 @@ int initialSensorDistance = 0;
 int laterSensorDistance =0;
 int FrontDistance = 0;
 
+std::vector<char> frameBuffer;
 
  
 ArduinoRuntime arduinoRuntime;
@@ -42,14 +51,20 @@ SR04 front(arduinoRuntime, TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
                 
 
 
-void setup()
-{
+void setup() {
     Serial.begin(9600);
+#ifdef __SMCE__    
+    
+    Camera.begin(QVGA, RGB888, 15);
+    frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
     mqtt.begin(host, 1883, WiFi);
     mqtt.setOptions(10,true,1500);
     //car.enableCruiseControl();
     //this is connect to the broker.
     //Will connect to localhost port 1883 be default
+#else
+  mqtt.begin(net);
+#endif    
     
     if (!mqtt.connected()) {
         mqtt.connect("arduino");  
@@ -75,8 +90,19 @@ void setup()
      
 }
 
-void loop()
-{   
+void loop() {
+     if (mqtt.connected()) {
+    mqtt.loop();
+    const auto currentTime = millis();
+#ifdef __SMCE__    
+    static auto previousFrame = 0UL;
+    if (currentTime - previousFrame >= 65) {
+      previousFrame = currentTime;
+      Camera.readFrame(frameBuffer.data());
+      mqtt.publish("Group/13/Camera", frameBuffer.data(), frameBuffer.size(),
+                   false, 0);
+    }
+#endif    
     
     
     FrontDistance = front.getDistance();
@@ -92,6 +118,13 @@ void loop()
     mqtt.loop();
     
 }
+#ifdef __SMCE__
+  // Avoid over-using the CPU if we are running in the emulator
+  delay(35);
+#endif
+}
+
+
 
 boolean movingSituation(){
   initialSensorDistance= front.getDistance();
@@ -102,5 +135,6 @@ boolean movingSituation(){
   }
   else{
     return false;
-  }  
+  }
+   
 }
