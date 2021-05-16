@@ -130,7 +130,20 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     public void cameraView(String topic,ImageView camera) throws MqttException {
 
 
-        client.subscribe(topic, 0);
+        IMqttToken subToken = client.subscribe(topic, 0);
+        subToken.setActionCallback(new IMqttActionListener() {
+            @Override
+            public void onSuccess(IMqttToken asyncActionToken) {
+                Toast.makeText(MainActivity.this, "Camera Connected", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                Toast.makeText(MainActivity.this, "Camera Not connected", Toast.LENGTH_SHORT).show();
+
+            }
+        });
         client.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
@@ -151,6 +164,8 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
                 }
                 bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
                 camera.setImageBitmap(bm);
+
+                Log.e(topic, String.valueOf(colors.length));
 
                 Log.e(topic, "[MQTT] Topic: " + topic + " | Message: " + message.toString());
 
