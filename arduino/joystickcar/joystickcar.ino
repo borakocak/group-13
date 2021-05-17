@@ -1,5 +1,6 @@
 #include <vector>
 #include <Smartcar.h>
+#include <Servo.h>
 #include <MQTT.h>
 #include <WiFi.h>
 #ifdef __SMCE__
