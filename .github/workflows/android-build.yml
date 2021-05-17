@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build-app:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Build JoystickTest
         run: |
-          cd JoystickTest
+           ls
           
   run-unit-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Set up JDK 1.8
         uses: actions/setup-java@v1
@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Run unit tests for JoystickTest
         run: |
-          cd JoystickTest
+           ls
           
   run-instrumented-tests:
     runs-on: macos-latest
@@ -38,4 +38,4 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
-          script: cd JoystickTest
+          script: ls
