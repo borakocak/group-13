@@ -11,14 +11,15 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="233dp"
-        android:layout_marginEnd="201dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="11dp"
         android:layout_marginRight="201dp"
         android:layout_marginBottom="11dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
         android:textColor="@color/white"
+        android:textColorHint="#C4EADFDF"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +37,7 @@
         android:hint="Password"
         android:inputType="textPersonName"
         android:textColor="@color/white"
+        android:textColorHint="#C8DCCECE"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginLeft="7dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="316dp"
         android:layout_marginRight="316dp"
         android:layout_marginBottom="327dp"
@@ -58,5 +60,66 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="278dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="marcellus_sc"
+        android:text="JoystickTest"
+        android:textColor="#D70E0505"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Don't have an account? "
+        android:textColor="#DAC4C4"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="106dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
+        android:background="#00FFFFFF"
+        android:text="Register"
+        android:textColor="#DDC1C1"
+        app:backgroundTint="#00CC9D9D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="212dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="76dp"
+        android:background="#00FFFFFF"
+        android:text="Forgot password?"
+        android:textColor="#D1C0C0"
+        android:visibility="visible"
+        app:backgroundTint="#00CC9D9D"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:rippleColor="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
