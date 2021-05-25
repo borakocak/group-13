@@ -7,21 +7,19 @@
     android:background="@drawable/background_login_2"
     tools:context=".MainActivity2">
 
+
     <EditText
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="201dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginTop="204dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHint="#C4EADFDF"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,10 +27,6 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="201dp"
-        android:layout_marginRight="201dp"
-        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPersonName"
@@ -40,6 +34,7 @@
         android:textColorHint="#C8DCCECE"
         app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
@@ -47,36 +42,32 @@
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="316dp"
-        android:layout_marginRight="316dp"
-        android:layout_marginBottom="327dp"
         android:background="@drawable/button_background"
         android:text="Login"
         app:backgroundTint="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="278dp"
-        android:layout_height="61dp"
+        android:layout_width="330dp"
+        android:layout_height="64dp"
         android:layout_marginTop="32dp"
-        android:fontFamily="marcellus_sc"
+        android:fontFamily="@font/aldrich"
         android:text="JoystickTest"
         android:textColor="#D70E0505"
         android:textSize="48sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
 
     <TextView
         android:id="@+id/textView4"
@@ -87,15 +78,17 @@
         android:textColor="#DAC4C4"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintHorizontal_bias="0.306"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="106dp"
-        android:layout_height="46dp"
+        android:layout_width="111dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:background="#00FFFFFF"
         android:text="Register"
         android:textColor="#DDC1C1"
@@ -109,10 +102,11 @@
         android:id="@+id/button2"
         android:layout_width="212dp"
         android:layout_height="39dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="64dp"
         android:background="#00FFFFFF"
         android:text="Forgot password?"
-        android:textColor="#D1C0C0"
+        android:textColor="#131212"
+        android:textStyle="italic"
         android:visibility="visible"
         app:backgroundTint="#00CC9D9D"
         app:iconTint="#00FFFFFF"
