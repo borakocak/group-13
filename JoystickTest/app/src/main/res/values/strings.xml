@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Remote Control</string>
     <string name="camera_view">\@camera_view</string>
-    <string name="speed_meter">\@speed_meter</string>
+    <string name="speed_meter">\ 0.0 m/s</string>
     <string name="cruise_control">\@cruise_control</string>
     <string name="start_stop">\@start_stop</string>
     <string name="connect">\@Connect</string>

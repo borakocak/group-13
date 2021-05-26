@@ -2,7 +2,6 @@
 #include <Smartcar.h>
 #include <WiFi.h>
 #include <MQTT.h>
-#include "Servo.h"
 
 #ifdef __SMCE__
 #include <OV767X.h>
@@ -15,7 +14,7 @@ WiFiClient net;
 
 MQTTClient mqtt;
 
-const char host[] = "broker.emqx.io";
+const char host[] = "130.229.131.64";
 const char topic[] = "/Group/13/#";
 const char moveTopic[] = "/Group/13/Move";
 const char turnTopic[] = "/Group/13/Turn";
