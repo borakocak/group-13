@@ -14,7 +14,7 @@ WiFiClient net;
 
 MQTTClient mqtt;
 
-const char host[] = "130.229.131.64";
+const char host[] = "192.168.0.117";
 const char topic[] = "/Group/13/#";
 const char moveTopic[] = "/Group/13/Move";
 const char turnTopic[] = "/Group/13/Turn";
@@ -83,6 +83,9 @@ void setup() {
           if(message == "EnableCruiseControl"){
             car.enableCruiseControl();
             Serial.println("EnableCruiseControl");
+          }else if(message == "DisableCruiseControl"){
+            car.disableCruiseControl();
+            Serial.println("DisableCruiseControl");
           }
          } 
       });
