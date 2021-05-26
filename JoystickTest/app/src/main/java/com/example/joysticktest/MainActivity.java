@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -31,9 +32,9 @@ import static com.example.joysticktest.JoystickView.*;
 public class MainActivity extends AppCompatActivity implements JoystickListener {
 
 
-    static String MQTTHOST = "tcp://broker.emqx.io:1883";
-    static String USERNAME = "";
-    static String PASSWORD = "";
+    static String MQTTHOST = "tcp://130.229.131.64:1883";
+    static String USERNAME = "admin";
+    static String PASSWORD = "hivemq";
     private static final int IMAGE_WIDTH = 320;
     private static final int IMAGE_HEIGHT = 240;
     private String topic = "/Group/13";
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     private String turnMessage;
     public Queue<Float> yDataPackage = new LinkedList<>();
     public Queue<Float> xDataPackage = new LinkedList<>();
-
+    final Bitmap bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
+    public TextView speedometer;
 
 
 
@@ -61,6 +63,13 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
         setContentView(R.layout.activity_main);
 
         ImageView camera = (ImageView)findViewById(R.id.imageView4);
+        speedometer = findViewById(R.id.textView2);
+
+
+
+
+
+
 
         camera.setOnClickListener(new OnClickListener() {
             @Override
@@ -84,21 +93,23 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
 
 
                 MqttConnectOptions options = new MqttConnectOptions();
-                //options.setUserName(USERNAME);//set the username
-                //options.setPassword(PASSWORD.toCharArray());//set the username
+                options.setUserName(USERNAME);//set the username
+                options.setPassword(PASSWORD.toCharArray());//set the username
 
 
                 client = new MqttAndroidClient(MainActivity.this, MQTTHOST,
                         clientId);
 
                 try {
-                    //IMqttToken token = client.connect(options);
-                    IMqttToken token = client.connect();
+                    IMqttToken token = client.connect(options);
+                    //IMqttToken token = client.connect();
                     token.setActionCallback(new IMqttActionListener() {
                         @Override
                         public void onSuccess(IMqttToken asyncActionToken) {
                             // We are connected
                             Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
+
+
                         }
 
                         @Override
@@ -121,6 +132,8 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
 
 
         });
+
+
 
 
 
@@ -152,22 +165,23 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                final Bitmap bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
+                if(topic.equals(cameraTopic)) {
 
-                final byte[] payload = message.getPayload();
-                final int[] colors = new int[IMAGE_WIDTH * IMAGE_HEIGHT];
-                for (int ci = 0; ci < colors.length; ++ci) {
-                    final byte r = payload[3 * ci];
-                    final byte g = payload[3 * ci + 1];
-                    final byte b = payload[3 * ci + 2];
-                    colors[ci] = Color.rgb(r, g, b);
+
+                    final byte[] payload = message.getPayload();
+                    final int[] colors = new int[IMAGE_WIDTH * IMAGE_HEIGHT];
+                    for (int ci = 0; ci < colors.length; ++ci) {
+                        final byte r = payload[3 * ci];
+                        final byte g = payload[3 * ci + 1];
+                        final byte b = payload[3 * ci + 2];
+                        colors[ci] = Color.rgb(r, g, b);
+                    }
+                    bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
+                    camera.setImageBitmap(bm);
+
+                    Log.e(topic, "[MQTT] Topic: " + topic + " | Message: " + message.toString());
+
                 }
-                bm.setPixels(colors, 0, IMAGE_WIDTH, 0, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-                camera.setImageBitmap(bm);
-
-                Log.e(topic, String.valueOf(colors.length));
-
-                Log.e(topic, "[MQTT] Topic: " + topic + " | Message: " + message.toString());
 
             }
             @Override
@@ -246,8 +260,10 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
 
         moveMessage = String.valueOf(yPercent);
         turnMessage = String.valueOf(xPercent);
+        speedometer.setText(moveMessage);
         Log.d("move", moveMessage + " " + turnMessage);
         try {
+
             client.publish(moveTopic, moveMessage.getBytes(), 0, false);
             client.publish(turnTopic, turnMessage.getBytes(), 0, false);
         } catch (MqttException e) {
@@ -264,9 +280,6 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
         }catch (MqttException e){
             e.printStackTrace();
         }
-
-
-
 
     }
 
