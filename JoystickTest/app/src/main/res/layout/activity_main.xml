@@ -35,11 +35,11 @@
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="271dp"
+        android:layout_marginBottom="289dp"
         android:gravity="center"
-        android:text="70"
+        android:text="@string/speed_meter"
         android:textColor="@android:color/white"
-        android:textSize="50sp" />
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -47,7 +47,7 @@
         android:layout_height="84dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="-120dp"
-        android:layout_marginBottom="242dp"
+        android:layout_marginBottom="288dp"
         android:contentDescription="@string/speed_meter"
         app:srcCompat="@drawable/speedometer2" />
 
