@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "112421637514",
+    "project_id": "joystick-test-8b0f9",
+    "storage_bucket": "joystick-test-8b0f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112421637514:android:774d1ba53c1aade78fcc73",
+        "android_client_info": {
+          "package_name": "com.example.mqttconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112421637514-ei003ofhacl73klhki1260du0ttoapn0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUWBnhZ3IXWfEdlDdS5Mxqax9oAzaE4U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112421637514-ei003ofhacl73klhki1260du0ttoapn0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
