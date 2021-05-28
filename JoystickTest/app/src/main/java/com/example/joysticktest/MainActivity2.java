@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -17,14 +19,34 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         Button login = (Button)findViewById(R.id.login);
+        Button register = findViewById(R.id.register);
+        EditText userName = findViewById(R.id.editTextTextPersonName);
+        EditText passWord = findViewById(R.id.editTextTextPersonName2);
+        MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(MainActivity2.this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String result = myDatabaseHelper.Search(userName.getText().toString());
+                if (passWord.getText().toString().equals(result))
+                {
+                    Toast.makeText(MainActivity2.this, "Log in successfully", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity2.this,MainActivity.class);
+                    //ComponentName componentName = new ComponentName("com.example.joysticktest","com.example.joysticktest.MainActivity");
+                    //intent.setComponent(componentName);
+                    startActivity(intent);
 
-                Intent intent = new Intent(MainActivity2.this,MainActivity.class);
-                //ComponentName componentName = new ComponentName("com.example.joysticktest","com.example.joysticktest.MainActivity");
-                //intent.setComponent(componentName);
+                }else{
+                    Toast.makeText(MainActivity2.this, "Please enter the right username and password", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(MainActivity2.this,RegisterActicity.class);
+
                 startActivity(intent);
             }
         });
