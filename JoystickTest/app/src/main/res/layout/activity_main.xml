@@ -83,7 +83,7 @@
         android:onClick="enableCruiseControl"/>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/stopButton"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_above="@+id/button1"
@@ -96,7 +96,8 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="15dp"
         android:contentDescription="@string/start_stop"
-        app:srcCompat="@drawable/selfpark" />
+        app:srcCompat="@drawable/selfpark"
+        android:onClick="enableStopButton" />
 
     <Button
         android:id="@+id/button1"
