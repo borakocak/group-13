@@ -48,8 +48,7 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     public Queue<Float> xDataPackage = new LinkedList<>();
     final Bitmap bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
     public TextView speedometer;
-
-    public boolean gStatus;
+    public boolean gStatus = false;
 
 
     MqttAndroidClient client;
