@@ -1,7 +1,7 @@
 # group-13
 
 # What ?
-A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
+A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created mobile app based controller. Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
 
 # Why ?
 The main objective of this software is to utilize and demonstrate the use of a real-time based embedded system in this case a functional user interface with the smart car emulator. One of our main goals is to implement a responsible GUI which can easily control all the functionality in the smart car emulator.  
