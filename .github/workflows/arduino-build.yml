@@ -23,4 +23,6 @@ jobs:
           arduino-cli lib install "MQTT"
       - name: Build sketch
         run: |
+
           arduino-cli compile -b esp32:esp32:esp32doit-devkit-v1 arduino/joystickcar/joystickcar.ino
+
