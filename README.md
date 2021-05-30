@@ -11,7 +11,7 @@
 6. Peiran Wei
 7. Zubeen S Maruf
 
-## [Recording of the Demo](youtube.com/watch?v=j8iELpKE-KA)
+## [Recording of the Demo](https://youtu.be/j8iELpKE-KA)
 
 In order to showcase of our final product, we have recorded a video demonstrating the full functionality of our system. We hope the video gives you a good presentation of what we've been trying to achieve. Thanks for watching!
 
