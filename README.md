@@ -20,6 +20,7 @@ In order to showcase of our final product, we have recoded a video demonstrating
 3. [What does it solve?](#what-does-it-solve-?)
 4. [How did we develop it?](#how-?)
 5. [Application User Manual](#application-user-manual)
+6. [Software Architecture](https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/README.md#software-architecture)
 
 ## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
