@@ -38,8 +38,8 @@ We are going to solve the above mentioned problems through an agile method of wo
 
 # Application User Manual
 <p float="left">
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="400" />
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="400" />
+<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="425" />
+<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="425" />
 </p>
 
 1. The login page of the UI indicates to the user that an account can be registered or logined by pressing the specific button.
@@ -47,11 +47,13 @@ We are going to solve the above mentioned problems through an agile method of wo
 3. Once SMCE has been connected, a user can control the car manually by using the joystick button.
 4. By pressing the button 'Curise Control' and 'Stop', a user can manually require the car into curising mode or stop the car immediately.
 
-## Software architecture
+## Software Architecture
 Sequence Diagram
+
 ![Sequence diagram](https://github.com/DIT112-V21/group-13/blob/softwareArchitecture/images/Sequence%20Diagram.png)
 
 Activity Diagram
+
 ![Activity diagram](https://github.com/DIT112-V21/group-13/blob/softwareArchitecture/images/Activity%20diagram.png)
 
    JoystickTest is an application where a user can login and control their car remotely. It allows the user to control the car by using MQTT as a broker. If the user is a registered user, he/she will be able to login to the program by providing their username and password, and if they are not, they will be able to create a new account. The user's information will be saved in a database once they have registered. A successful message is displayed to the user once they have registered or logged in, while an unsuccessful message is presented if the procedure fails.
