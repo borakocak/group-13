@@ -1,10 +1,11 @@
 #include <vector>
 #include <Smartcar.h>
-#include <WiFi.h>
 #include <MQTT.h>
-
+#include <WiFi.h>
 #ifdef __SMCE__
 #include <OV767X.h>
+
+
 #endif
 
 
@@ -14,7 +15,7 @@ WiFiClient net;
 
 MQTTClient mqtt;
 
-const char host[] = "130.229.131.64";
+const char host[] = "192.168.31.65";//"broker.emqx.io";
 const char topic[] = "/Group/13/#";
 const char moveTopic[] = "/Group/13/Move";
 const char turnTopic[] = "/Group/13/Turn";
@@ -49,6 +50,7 @@ SmartCar car(arduinoRuntime, control, gyroscope, leftOdometer, rightOdometer);
  
 SR04 front(arduinoRuntime, TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
+
                 
 
 
@@ -56,10 +58,10 @@ void setup() {
     Serial.begin(9600);
 #ifdef __SMCE__    
     
-    Camera.begin(QVGA, RGB888, 15);
+    Camera.begin(QQVGA, RGB888, 30);
     frameBuffer.resize(Camera.width() * Camera.height() * Camera.bytesPerPixel());
     mqtt.begin(host, 1883, WiFi);
-    mqtt.setOptions(10,true,1500);
+    mqtt.setOptions(10,true,1000);
     //car.enableCruiseControl();
     //this is connect to the broker.
     //Will connect to localhost port 1883 be default
@@ -68,7 +70,7 @@ void setup() {
 #endif    
     
     if (!mqtt.connected()) {
-        mqtt.connect("arduino");  
+        mqtt.connect("mybroker","admin","hivemq");
         mqtt.subscribe(topic,0);
         mqtt.onMessage([](String topic, String message){
           
@@ -88,6 +90,8 @@ void setup() {
       });
       
     }//this is a callback
+
+    
      
 }
 
@@ -102,8 +106,12 @@ void loop() {
       Camera.readFrame(frameBuffer.data());
       mqtt.publish("/Group/13/Camera", frameBuffer.data(), frameBuffer.size(),
                    false, 0);
+
+      
+      
     }
 #endif    
+    
     
     
     FrontDistance = front.getDistance();
