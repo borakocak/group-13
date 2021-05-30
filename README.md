@@ -1,4 +1,18 @@
-# group-13
+# Mini Project: System Development
+
+## Group 13
+## Members:
+1. Aditya Nair
+2. Bora Kocak
+3. Jiacheng Li
+4. Maheli Silva
+5. Najeb Albakar
+6. Peiran Wei
+7. Zubeen S Maruf
+
+# Recording of the Demo
+
+In order to demo our end product, we have recoded a short video demonstrating the full functionality of our system. We hope the video gives you a good idea of what we've been trying to achieve. Thanks for watching!
 
 # What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
@@ -21,6 +35,10 @@ Aid the driver with more information about surroundings located around the car. 
 
 # How ? 
 We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
+
+# Application User Manual
+
+
 
 ## Software architecture
 Sequence Diagram
