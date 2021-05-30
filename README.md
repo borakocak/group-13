@@ -21,6 +21,7 @@ In order to showcase of our final product, we have recoded a video demonstrating
 4. [How did we develop it?](#how-)
 5. [Application User Manual](#application-user-manual)
 6. [Software Architecture](#software-architecture)
+7. [Technology](#technology)
 
 ## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
