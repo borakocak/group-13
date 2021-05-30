@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context= "com.example.joysticktest.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="320dp"
+        android:layout_height="240dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:contentDescription="@string/camera_view"
+         />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="377dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="289dp"
+        android:gravity="center"
+        android:text="@string/speed_meter"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="388dp"
+        android:layout_height="84dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-120dp"
+        android:layout_marginBottom="288dp"
+        android:contentDescription="@string/speed_meter"
+        app:srcCompat="@drawable/speedometer2" />
+
+    <com.example.joysticktest.JoystickView
+        android:id="@+id/testJoystick"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:layout_marginBottom="14dp" />
+
+    <ImageView
+        android:id="@+id/cruiseControl"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-70dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/cruise_control"
+        android:src="@drawable/ccontrol"
+        android:onClick="enableCruiseControl"/>
+
+    <ImageView
+        android:id="@+id/stopButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@+id/button1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginLeft="260dp"
+        android:layout_marginTop="-70dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="15dp"
+        android:contentDescription="@string/start_stop"
+        app:srcCompat="@drawable/selfpark"
+        android:onClick="enableStopButton" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:backgroundTint="#F00"
+        android:text="Connect"
+        android:textColor="@color/white" />
+
+
+
+
+</RelativeLayout>

@@ -72,7 +72,7 @@ void loop() {
     if (currentTime - previousFrame >= 65) {
       previousFrame = currentTime;
       Camera.readFrame(frameBuffer.data());
-      mqtt.publish("/smartcar/camera", frameBuffer.data(), frameBuffer.size(),
+      mqtt.publish("/Group/13/Camera", frameBuffer.data(), frameBuffer.size(),
                    false, 0);
     }
 #endif
