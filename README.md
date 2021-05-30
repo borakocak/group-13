@@ -68,7 +68,8 @@ Scenario 3: For security purposes the car owner can monitor their car at all tim
 
 <img width="326" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
 
-<img width="1269" alt="Screenshot 2021-05-30 at 02 37 36" src="https://user-images.githubusercontent.com/81154027/120088374-085e1680-c0f0-11eb-8b59-e16d96e4d93e.png">
+<img width="1339" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
+
 
 
 ## Software Architecture
