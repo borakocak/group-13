@@ -47,14 +47,14 @@ Scenario 2: It prevents the family from getting drenched in the rain. If the fam
 Scenario 3: For security purposes the car owner can monitor their car at all times. 
 
 ## How ? 
-We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating. For the pracrtical based Scenarios here is how they will solve them:
+We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating. For the practical based scenarios here is how they will solve them:
 
 Scenario 1 and 2: The car owner logins to the android and by using the joystick they can bring the car around, if the car is out of view they can use the live camera built in to the car to steer the vehicle at their located position, saving both time and effort of the car owners.
 
-Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
+Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles environment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
 ## [Get Started](https://github.com/DIT112-V21/group-13/wiki/Get-started)
-Check the wiki page for environment requirements and set up instrcutions.
+Check the wiki page for environment requirements and set up instructions.
 
 ### Environment settings:
 Software and platform:
@@ -78,7 +78,7 @@ git@github.com:DIT112-V21/group-13.git
 
 ![Screenshot 2021-05-29 at 01 46 08](https://user-images.githubusercontent.com/81154027/120051122-acc45800-c01f-11eb-8578-0ff4b818964b.png)
 
-4. Next, you should start the local broker(Here I use Hivemq-ce as an example)
+4. Next, you should start the local broker(Here we use Hivemq-ce as an example)
    For Mac users run ./run.sh   
 ![Screenshot 2021-05-29 at 01 48 36](https://user-images.githubusercontent.com/81154027/120051206-062c8700-c020-11eb-9665-45db7b5fd48a.png)
  
