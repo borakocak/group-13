@@ -19,9 +19,11 @@ In order to showcase of our final product, we have recorded a video demonstratin
 2. [Why did we need it?](#why-)
 3. [What does it solve?](#what-does-it-solve-)
 4. [How did we develop it?](#how-)
-5. [Application User Manual](#application-user-manual)
-6. [Software Architecture](#software-architecture)
-7. [Technology](#technology)
+5. [How to run the project?](#how-to-run-the-project-)
+6. [Application User Manual](#application-user-manual)
+7. [Software Architecture](#software-architecture)
+8. [Technology](#technology)
+9. [Resource](#resource)
 
 ## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using a GUI. We created an android mobile app based controller.This app will allow users to control and watch a live stream of their car performing tasks.Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely. The smart car is also equipped with other features such as cruise control, to maintain a constant speed. Emergency stop button, to halt the car a stop incase of any emergency while controlling the car.
@@ -34,9 +36,6 @@ Scenario 1: The car owner is at a shopping mall or supermarket and has a handful
 Scenario 2: It is pouring down with rain and the family is stranded at the entrance of their establishment they were not prepared for the sudden rain, the car is parked outside at a carpark and the family cannot reach to the car due to the heavy rainfall.
 
 Scenario 3: The car owner wants to check up on the car to check if everything is ok and is out of danger, a check around the surroundings would give the owner assurance their car is fine.
-
-
- 
 
 ## What does it solve ?
 Aid the driver with more information about surroundings located around the car. It also reduces human error and time during the operation.The following shows the sollutions to the scenarios explained above.
@@ -54,19 +53,33 @@ Scenario 1 and 2: The car owner logins to the android and by using the joystick 
 
 Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
+## How to run the project ?
+1. Clone the repository by SSH key.
+```
+git@github.com:DIT112-V21/group-13.git
+```
+2. Open the folder 'JoystickTest' as a project in Android Stuido.
+3. Open 'joystickcar.ino' as a sketch in SMCE.
+4. Compile the sketch selected.
+5. After a successfull compilation, start the sketch.
+6. Run the android application by pressing the run button in Android Stuido.
+7. After the simulator shown, login the app by an existing account.
+8. Press the 'connect' button displayed on the simulator.
+9. Project is running.
+
 ## Application User Manual
-<img width="332" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
 
 
 1. Click the “REGISTER” to register an account. Make sure you enter the same password twice. After you confirm your account, click 'back' to log into the system.
 
-<img width="325" alt="Screenshot 2021-05-30 at 02 24 47" src="https://user-images.githubusercontent.com/81154027/120106470-52c9ac80-c15d-11eb-8580-f6d3f74dd497.png">
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 24 47" src="https://user-images.githubusercontent.com/81154027/120106470-52c9ac80-c15d-11eb-8580-f6d3f74dd497.png">
 
 2. When you login into the system successfully, you need to start the SMCE car and click the connect button be connected to the car via the MQTT broker. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
 
-3.By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
+3. By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
 
-<img width="326" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
 
 <img width="1339" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
 
@@ -93,3 +106,7 @@ Activity Diagram
 - SMCE
 - Arduino IDE & VS Code & Android Studio
 - Java FX  &  Swing
+
+## Resource
+1. [SMCE](https://github.com/ItJustWorksTM/smce-gd/releases)
+2. [Android Stuido](https://developer.android.com/studio)
