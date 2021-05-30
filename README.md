@@ -13,6 +13,17 @@ Aid the driver with more information about surroundings located around the car. 
 We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
 
 ## Software architecture
+Sequence Diagram
+![Sequence diagram](https://github.com/DIT112-V21/group-13/blob/softwareArchitecture/images/Sequence%20Diagram.png)
+
+Activity Diagram
+![Activity diagram](https://github.com/DIT112-V21/group-13/blob/softwareArchitecture/images/Activity%20diagram.png)
+
+   JoystickTest is an application where a user can login and control their car remotely. It allows the user to control the car by using MQTT as a broker. If the user is a registered user, he/she will be able to login to the program by providing their username and password, and if they are not, they will be able to create a new account. The user's information will be saved in a database once they have registered. A successful message is displayed to the user once they have registered or logged in, while an unsuccessful message is presented if the procedure fails.
+
+  The user will be able to control the car once they have logged in. They can either move/turn the car, use cruise control, camera or stop the car. The user can move the car using the joystick as they wish. The car will be driven, and if an obstacle is encountered along the path, it will be automatically detected and avoided. 
+
+  The camera function implemented will allow the user to see the road on which the car is traveling. If the cruise control function is enabled, the car will roam around until the function is disabled. Users can also halt the car with the stop button.
 
 # Technology 
 - C++
