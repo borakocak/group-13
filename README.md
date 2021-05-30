@@ -37,8 +37,13 @@ Aid the driver with more information about surroundings located around the car. 
 We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
 
 # Application User Manual
+![app user manual01](https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app user manual01.png)
+![app user manual02](https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app user manual02.png)
 
-
+1. The login page of the UI indicates to the user that an account can be registered or logined by pressing the specific button.
+2. The car-view application UI indicates to the user that SMCE can be connected to via the MQTT broker.
+3. Once SMCE has been connected, a user can control the car manually by using the joystick button.
+4. By pressing the button 'Curise Control' and 'Stop', a user can manually require the car into curising mode or stop the car immediately.
 
 ## Software architecture
 Sequence Diagram
@@ -55,6 +60,7 @@ Activity Diagram
 
 # Technology 
 - C++
-- Arduino IDE & VS Code & IntelliJ
-- Java FX  &  Swing
 - Java
+- SMCE
+- Arduino IDE & VS Code & Android Studio
+- Java FX  &  Swing
