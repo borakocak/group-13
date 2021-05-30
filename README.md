@@ -21,9 +21,11 @@ In order to showcase of our final product, we have recorded a video demonstratin
 2. [Why did we need it?](#why-)
 3. [What does it solve?](#what-does-it-solve-)
 4. [How did we develop it?](#how-)
-5. [Application User Manual](#application-user-manual)
-6. [Software Architecture](#software-architecture)
-7. [Technology](#technology)
+5. [Get Started](#get-started)
+6. [Application User Manual](#application-user-manual)
+7. [Software Architecture](#software-architecture)
+8. [Technology](#technology)
+9. [Resource](#resource)
 
 ## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using a GUI. We created an android mobile app based controller.This app will allow users to control and watch a live stream of their car performing tasks.Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely. The smart car is also equipped with other features such as cruise control, to maintain a constant speed. Emergency stop button, to halt the car a stop incase of any emergency while controlling the car.
@@ -36,9 +38,6 @@ Scenario 1: The car owner is at a shopping mall or supermarket and has a handful
 Scenario 2: It is pouring down with rain and the family is stranded at the entrance of their establishment they were not prepared for the sudden rain, the car is parked outside at a carpark and the family cannot reach to the car due to the heavy rainfall.
 
 Scenario 3: The car owner wants to check up on the car to check if everything is ok and is out of danger, a check around the surroundings would give the owner assurance their car is fine.
-
-
- 
 
 ## What does it solve ?
 Aid the driver with more information about surroundings located around the car. It also reduces human error and time during the operation.The following shows the sollutions to the scenarios explained above.
@@ -56,16 +55,62 @@ Scenario 1 and 2: The car owner logins to the android and by using the joystick 
 
 Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
-## Application User Manual
-<p float="left">
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="425" />
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="425" />
-</p>
+## [Get Started](https://github.com/DIT112-V21/group-13/wiki/Get-started)
+Check the wiki page for environment requirements and set up instrcutions.
 
-1. The login page of the UI indicates to the user that an account can be registered or logined by pressing the specific button.
-2. The car-view application UI indicates to the user that SMCE can be connected to via the MQTT broker.
-3. Once SMCE has been connected, a user can control the car manually by using the joystick button.
-4. By pressing the button 'Curise Control' and 'Stop', a user can manually require the car into curising mode or stop the car immediately.
+### Environment settings:
+Software and platform:
+```
+1. Microsoft Windows and Mac OS
+2. Android Studio
+3. JDK1.8
+4. SmartCarEmulator
+5. ArduinoIDE
+6. Hivemq-ce(or any other MQTT broker)
+```
+### Get started:
+
+1. Clone the project's repository by SSH key:
+```
+git@github.com:DIT112-V21/group-13.git
+```
+2. After you clone or download the whole project from our repository.
+
+3. Use the Android Studio to open the “JoystickTest” file and sync the “build.gradle”file.
+
+![Screenshot 2021-05-29 at 01 46 08](https://user-images.githubusercontent.com/81154027/120051122-acc45800-c01f-11eb-8578-0ff4b818964b.png)
+
+4. Next, you should start the local broker(Here I use Hivemq-ce as an example)
+   For Mac users run ./run.sh   
+![Screenshot 2021-05-29 at 01 48 36](https://user-images.githubusercontent.com/81154027/120051206-062c8700-c020-11eb-9665-45db7b5fd48a.png)
+ 
+5. The default MQTThost is your local-IP and the default MQTTport is 1883.
+   You can set the MQTThost in the “MainActivity.java”.
+
+![Screenshot 2021-05-29 at 01 50 40](https://user-images.githubusercontent.com/81154027/120051302-5e638900-c020-11eb-883c-a557583dceef.png)
+ 
+6. Then, use the Arduino IDE to open the “joystickcar.ino”. And set the same host, port, USERNAME, and PASSWORD.
+
+<img width="605" alt="Screenshot 2021-05-30 at 02 17 08" src="https://user-images.githubusercontent.com/81154027/120088040-3ee66200-c0ed-11eb-9134-2d1d7cddfcd2.png">
+
+7. Open the SMCE(SmartCarEmulator) to compile “joystickcar.ino” and run the android studio “JoystickTest” project.
+
+## Application User Manual
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
+
+
+1. Click the “REGISTER” to register an account. Make sure you enter the same password twice. After you confirm your account, click 'back' to log into the system.
+
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 24 47" src="https://user-images.githubusercontent.com/81154027/120106470-52c9ac80-c15d-11eb-8580-f6d3f74dd497.png">
+
+2. When you login into the system successfully, you need to start the SMCE car and click the connect button be connected to the car via the MQTT broker. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
+
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
+3. By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
+
+<img width="800" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
+
+
 
 ## Software Architecture
 Sequence Diagram
@@ -88,3 +133,7 @@ Activity Diagram
 - SMCE
 - Arduino IDE & VS Code & Android Studio
 - Java FX  &  Swing
+
+## Resource
+1. [SMCE](https://github.com/ItJustWorksTM/smce-gd/releases)
+2. [Android Stuido](https://developer.android.com/studio)
