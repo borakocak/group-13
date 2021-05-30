@@ -10,14 +10,21 @@
 6. Peiran Wei
 7. Zubeen S Maruf
 
-# Recording of the Demo
+## [Recording of the Demo](https://drive.google.com/file/d/1DHJ9WdLHI-47YSUPtDFS1ZAgrk4xe-8m/view?usp=sharing)
 
-In order to demo our end product, we have recoded a short video demonstrating the full functionality of our system. We hope the video gives you a good idea of what we've been trying to achieve. Thanks for watching!
+In order to showcase of our final product, we have recoded a video demonstrating the full functionality of our system. We hope the video gives you a good idea of what we've been trying to achieve. Thanks for watching!
 
-# What ?
+## Table of Contents
+1. [What does the product contain?](#what)
+2. [Why did we need it?](#why)
+3. [What does it solve?](#what-does-it-solve)
+4. [How did we develop it?](#how)
+5. [Application User Manual](#application-user-manual)
+
+## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
 
-# Why ?
+## Why ?
 User story: As a car i should be able to look at the speed of my moving vehicle to keep it under speed limits.
 Acceptance criteria: Live speedometer display projected directly from the car.
 
@@ -30,13 +37,13 @@ Scenario 3: The car owner wants to check up on the car to check if everything is
 
 The main objective of this software is to utilize and demonstrate the use of a real-time based embedded system in this case a functional user interface with the smart car emulator. One of our main goals is to implement a responsible GUI which can easily control all the functionality in the smart car emulator.  
 
-# What does it solve ?
+## What does it solve ?
 Aid the driver with more information about surroundings located around the car. It also reduces human error and time during the  operation.For example, It helps people park the car and give suggestions when people are controlling the car. It contains autonomous driving which allows the car to park by itself.
 
-# How ? 
+## How ? 
 We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
 
-# Application User Manual
+## Application User Manual
 <p float="left">
 <img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="425" />
 <img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="425" />
@@ -62,7 +69,7 @@ Activity Diagram
 
   The camera function implemented will allow the user to see the road on which the car is traveling. If the cruise control function is enabled, the car will roam around until the function is disabled. Users can also halt the car with the stop button.
 
-# Technology 
+## Technology 
 - C++
 - Java
 - SMCE
