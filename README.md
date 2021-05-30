@@ -12,7 +12,7 @@
 
 ## [Recording of the Demo](https://drive.google.com/file/d/1DHJ9WdLHI-47YSUPtDFS1ZAgrk4xe-8m/view?usp=sharing)
 
-In order to showcase of our final product, we have recoded a video demonstrating the full functionality of our system. We hope the video gives you a good idea of what we've been trying to achieve. Thanks for watching!
+In order to showcase of our final product, we have recorded a video demonstrating the full functionality of our system. We hope the video gives you a good presentation of what we've been trying to achieve. Thanks for watching!
 
 ## Table of Contents
 1. [What does the product contain?](#what-)
@@ -24,26 +24,35 @@ In order to showcase of our final product, we have recoded a video demonstrating
 7. [Technology](#technology)
 
 ## What ?
-A software that allows an end user to control a smart car remotely in a less traditional way by using the GUI we created (either a mobile app or a web based controller). Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely.
+A software that allows an end user to control a smart car remotely in a less traditional way by using a GUI. We created an android mobile app based controller.This app will allow users to control and watch a live stream of their car performing tasks.Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely. The smart car is also equipped with other features such as cruise control, to maintain a constant speed. Emergency stop button, to halt the car a stop incase of any emergency while controlling the car.
 
 ## Why ?
-User story: As a car i should be able to look at the speed of my moving vehicle to keep it under speed limits.
-Acceptance criteria: Live speedometer display projected directly from the car.
+The main objective of this software is to utilize and demonstrate the use of a real-time based embedded system in this case a functional user interface with the smart car emulator. One of our main goals is to implement a responsible GUI which can easily control all the functionality in the smart car emulator. Here we have also added practical based possible scenarios our system can go through.
 
-Scenario 1: The car owner is at a shopping mall or supermarket and has a bunch of groceries and bags in hand, the car is parked far away from the entrance and it is quite difficult to get to the car.
+Scenario 1: The car owner is at a shopping mall or supermarket and has a handful of groceries and bags in their hand, the car is parked far away from the entrance and it is quite difficult to get to the car.
 
-Scenario 2: It is pouring down with rain and the family is stranded at the entrance of their establishment they were not prepared for the sudden rain, the car is parked outside at a carpark  and they family cannot reach to the car due to the heavy rainfall.
+Scenario 2: It is pouring down with rain and the family is stranded at the entrance of their establishment they were not prepared for the sudden rain, the car is parked outside at a carpark and the family cannot reach to the car due to the heavy rainfall.
 
 Scenario 3: The car owner wants to check up on the car to check if everything is ok and is out of danger, a check around the surroundings would give the owner assurance their car is fine.
 
 
-The main objective of this software is to utilize and demonstrate the use of a real-time based embedded system in this case a functional user interface with the smart car emulator. One of our main goals is to implement a responsible GUI which can easily control all the functionality in the smart car emulator.  
+ 
 
 ## What does it solve ?
-Aid the driver with more information about surroundings located around the car. It also reduces human error and time during the  operation.For example, It helps people park the car and give suggestions when people are controlling the car. It contains autonomous driving which allows the car to park by itself.
+Aid the driver with more information about surroundings located around the car. It also reduces human error and time during the operation.The following shows the sollutions to the scenarios explained above.
+
+Scenario 1: The car owner does not have to carry the heavy bags all the way to the car. They dont have to leave the groceries in doubt to go get the the car first.
+
+Scenario 2: It prevents the family from getting drenched in the rain. If the family has kids it also prevents safetly concers due to the rain.
+
+Scenario 3: For security purposes the car owner can monitor their car at all times. 
 
 ## How ? 
-We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating.
+We are going to solve the above mentioned problems through an agile method of working. To do so we are going to have regular group meetings in which we discuss and decide our tasks that we are going to complete till the next meeting. In addition we will also have Q&A sessions with the TA’s or teachers throughout the time we are working on the project to have regular feedback or suggestions on the product we are creating. For the pracrtical based Scenarios here is how they will solve them:
+
+Scenario 1 and 2: The car owner logins to the android and by using the joystick they can bring the car around, if the car is out of view they can use the live camera built in to the car to steer the vehicle at their located position, saving both time and effort of the car owners.
+
+Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
 ## Application User Manual
 <p float="left">
