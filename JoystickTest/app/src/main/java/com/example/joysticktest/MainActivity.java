@@ -31,8 +31,7 @@ import static com.example.joysticktest.JoystickView.*;
 
 public class MainActivity extends AppCompatActivity implements JoystickListener {
 
-
-    static String MQTTHOST = "tcp://192.168.0.117:1883";
+    static String MQTTHOST = "tcp://130.229.131.64:1883";
     static String USERNAME = "admin";
     static String PASSWORD = "hivemq";
     private static final int IMAGE_WIDTH = 320;
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     private String moveTopic = "/Group/13/Move";
     private String turnTopic = "/Group/13/Turn";
     private String cruiseTopic = "/Group/13/CruiseControl";
+    private String stopTopic = "/Group/13/StopButton";
     private String cameraTopic = "/Group/13/Camera";
     private String moveMessage;
     private String turnMessage;
@@ -48,21 +48,17 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     public Queue<Float> xDataPackage = new LinkedList<>();
     final Bitmap bm = Bitmap.createBitmap(IMAGE_WIDTH, IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
     public TextView speedometer;
-    public boolean gStatus = false;
-
 
     MqttAndroidClient client;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView camera = (ImageView) findViewById(R.id.imageView4);
         speedometer = findViewById(R.id.textView2);
 
-
+        ImageView camera = (ImageView)findViewById(R.id.imageView4);
         camera.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,18 +70,15 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
             }
         });
 
-
         Button btn1 = (Button) findViewById(R.id.button1);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String clientId = MqttClient.generateClientId();
 
-
                 MqttConnectOptions options = new MqttConnectOptions();
                 options.setUserName(USERNAME);//set the username
                 options.setPassword(PASSWORD.toCharArray());//set the username
-
 
                 client = new MqttAndroidClient(MainActivity.this, MQTTHOST,
                         clientId);
@@ -98,8 +91,6 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
                         public void onSuccess(IMqttToken asyncActionToken) {
                             // We are connected
                             Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
-
-
                         }
 
                         @Override
@@ -112,43 +103,35 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
                 } catch (MqttException e) {
                     e.printStackTrace();
                 }
-
-
             }
-
 
         });
 
-
     }
 
-    public void cameraView(String topic, ImageView camera) throws MqttException {
-
+    public void cameraView(String topic,ImageView camera) throws MqttException {
 
         IMqttToken subToken = client.subscribe(topic, 0);
         subToken.setActionCallback(new IMqttActionListener() {
             @Override
             public void onSuccess(IMqttToken asyncActionToken) {
                 Toast.makeText(MainActivity.this, "Camera Connected", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
                 Toast.makeText(MainActivity.this, "Camera Not connected", Toast.LENGTH_SHORT).show();
-
             }
         });
+
         client.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
-
             }
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                if (topic.equals(cameraTopic)) {
-
+                if(topic.equals(cameraTopic)) {
 
                     final byte[] payload = message.getPayload();
                     final int[] colors = new int[IMAGE_WIDTH * IMAGE_HEIGHT];
@@ -166,7 +149,6 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
                 }
 
             }
-
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {
 
@@ -175,13 +157,13 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
 
     }
 
-    public float rectifier(float Percent) {
+    public float rectifier(float Percent){
         ArrayList<Float> Pivot = new ArrayList<>();
 
-        for (float i = 0; i <= 100; i = i + 10) {
+        for(float i = 0; i<= 100; i = i + 10 ){
             Pivot.add(i);
-            for (float y : Pivot) {
-                if (y >= Percent) {
+            for (float y:Pivot) {
+                if(y >= Percent ){
                     Percent = y;
                     break;
                 }
@@ -190,37 +172,35 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
         return Percent;
     }
 
-    public float pack(Queue<Float> dataPackage) {
+    public float pack(Queue<Float> dataPackage){
         float x1 = 0;
         float x2 = 0;
         float x3 = 0;
-        if (!(dataPackage.isEmpty())) {
+        if (!(dataPackage.isEmpty())){
             x1 = dataPackage.poll();
             x2 = dataPackage.poll();
             x3 = dataPackage.poll();
         }
 
-        if (x1 == x2 && x2 == x3) {
+        if(x1 == x2 && x2 == x3){
             return x1;
         }
 
         return x3;
     }
 
-
     public void onJoystickMoved(float xPercent, float yPercent, int id) {
-        yPercent = 0 - (yPercent * 100);
-        xPercent = xPercent * 90;
+        yPercent = 0 - (yPercent*100);
+        xPercent= xPercent*90;
 
-        if (yPercent < 0 && gStatus == false) {
+        if(yPercent < 0){
             yPercent = 0 - rectifier(Math.abs(yPercent));
-        } else if (yPercent < 0 && gStatus == true) {
-        } else {
+        }else{
             yPercent = rectifier(yPercent);
         }
-        if (xPercent < 0) {
+        if(xPercent < 0){
             xPercent = 0 - rectifier(Math.abs(xPercent));
-        } else {
+        }else{
             xPercent = rectifier(xPercent);
         }
         xDataPackage.offer(0.0f);
@@ -256,25 +236,28 @@ public class MainActivity extends AppCompatActivity implements JoystickListener 
     }
 
 
-    public void enableCruiseControl(View v) {
-        //String message = "EnableCruiseControl";
-        //boolean status;
-        if (gStatus = false)
-            try {
-                client.publish(cruiseTopic,"EnableCruiseControl".getBytes(), 0, false);
-            } catch (MqttException e) {
-                e.printStackTrace();
-                gStatus = true;
-            }
-        else if (gStatus = true)
-            try {
-                client.publish(cruiseTopic,"DisableCruiseControl".getBytes(), 0, false);
-            } catch (MqttException e) {
-                e.printStackTrace();
-                gStatus = false;
-            }
+    public void enableCruiseControl(View v){
+        String message = "EnableCruiseControl";
 
+        try{
+            client.publish(cruiseTopic,message.getBytes(),0,false);
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
     }
 
-}
+    public void enableStopButton(View v){
+        String message = "EnableStopButton";
+        moveMessage = "0";
+        turnMessage = "0";
+        speedometer.setText(moveMessage);
 
+        try{
+            client.publish(moveTopic,moveMessage.getBytes(),0,false);
+            client.publish(turnMessage,turnMessage.getBytes(),0,false);
+            client.publish(stopTopic,message.getBytes(),0,false );
+        }catch (MqttException e){
+            e.printStackTrace();
+        }
+    }
+}
