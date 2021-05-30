@@ -68,29 +68,30 @@ Software and platform:
 ```
 ### Get started:
 
-Clone the project's repository by SSH key:
+1. Clone the project's repository by SSH key:
 ```
 git@github.com:DIT112-V21/group-13.git
 ```
-After you clone or download the whole project from our repository.
+2. After you clone or download the whole project from our repository.
 
-Use the Android Studio to open the “JoystickTest” file and sync the “build.gradle”file.
+3. Use the Android Studio to open the “JoystickTest” file and sync the “build.gradle”file.
+
 ![Screenshot 2021-05-29 at 01 46 08](https://user-images.githubusercontent.com/81154027/120051122-acc45800-c01f-11eb-8578-0ff4b818964b.png)
 
-Next, you should start the local broker(Here I use Hivemq-ce as an example)
-For Mac users run ./run.sh   
+4. Next, you should start the local broker(Here I use Hivemq-ce as an example)
+   For Mac users run ./run.sh   
 ![Screenshot 2021-05-29 at 01 48 36](https://user-images.githubusercontent.com/81154027/120051206-062c8700-c020-11eb-9665-45db7b5fd48a.png)
  
-The default MQTThost is your local-IP and the default MQTTport is 1883.
-You can set the MQTThost in the “MainActivity.java”.
+5. The default MQTThost is your local-IP and the default MQTTport is 1883.
+   You can set the MQTThost in the “MainActivity.java”.
 
 ![Screenshot 2021-05-29 at 01 50 40](https://user-images.githubusercontent.com/81154027/120051302-5e638900-c020-11eb-883c-a557583dceef.png)
  
-Then, use the Arduino IDE to open the “joystickcar.ino”. And set the same host, port, USERNAME, and PASSWORD.
+6. Then, use the Arduino IDE to open the “joystickcar.ino”. And set the same host, port, USERNAME, and PASSWORD.
 
 <img width="605" alt="Screenshot 2021-05-30 at 02 17 08" src="https://user-images.githubusercontent.com/81154027/120088040-3ee66200-c0ed-11eb-9134-2d1d7cddfcd2.png">
 
-Open the SMCE(SmartCarEmulator) to compile “joystickcar.ino” and run the android studio “JoystickTest” project.
+7. Open the SMCE(SmartCarEmulator) to compile “joystickcar.ino” and run the android studio “JoystickTest” project.
 
 ## Application User Manual
 <img width="225" height="425" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
