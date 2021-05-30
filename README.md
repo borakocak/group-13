@@ -19,11 +19,12 @@ In order to showcase of our final product, we have recorded a video demonstratin
 2. [Why did we need it?](#why-)
 3. [What does it solve?](#what-does-it-solve-)
 4. [How did we develop it?](#how-)
-5. [How to run the project?](#how-to-run-the-project-)
-6. [Application User Manual](#application-user-manual)
-7. [Software Architecture](#software-architecture)
-8. [Technology](#technology)
-9. [Resource](#resource)
+5. [Get Started](#get-started)
+6. [How to run the project?](#how-to-run-the-project-)
+7. [Application User Manual](#application-user-manual)
+8. [Software Architecture](#software-architecture)
+9. [Technology](#technology)
+10. [Resource](#resource)
 
 ## What ?
 A software that allows an end user to control a smart car remotely in a less traditional way by using a GUI. We created an android mobile app based controller.This app will allow users to control and watch a live stream of their car performing tasks.Besides, the smart car can detect obstacles around it and avoid it using embedded sensors for it to travel freely. The smart car is also equipped with other features such as cruise control, to maintain a constant speed. Emergency stop button, to halt the car a stop incase of any emergency while controlling the car.
@@ -53,6 +54,9 @@ Scenario 1 and 2: The car owner logins to the android and by using the joystick 
 
 Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
+## [Get Started](https://github.com/DIT112-V21/group-13/wiki/Get-started)
+Check the wiki page for environment requirements and set up instrcutions.
+
 ## How to run the project ?
 1. Clone the repository by SSH key.
 ```
@@ -80,7 +84,7 @@ git@github.com:DIT112-V21/group-13.git
 <img width="225" height="425" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
 3. By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
 
-<img width="1000" height="525" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
+<img width="800" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
 
 
 
