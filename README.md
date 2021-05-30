@@ -77,11 +77,10 @@ git@github.com:DIT112-V21/group-13.git
 
 2. When you login into the system successfully, you need to start the SMCE car and click the connect button be connected to the car via the MQTT broker. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
 
+<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
 3. By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
 
-<img width="225" height="425" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
-
-<img width="1339" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
+<img width="1000" height="700" alt="Screenshot 2021-05-30 at 18 38 25" src="https://user-images.githubusercontent.com/81154027/120112469-4736af80-c176-11eb-8498-67134821f7c7.png">
 
 
 
