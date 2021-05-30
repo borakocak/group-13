@@ -38,8 +38,8 @@ We are going to solve the above mentioned problems through an agile method of wo
 
 # Application User Manual
 <p float="left">
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="200" height="350" />
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="200" height="350" />
+<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="400" />
+<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="400" />
 </p>
 
 1. The login page of the UI indicates to the user that an account can be registered or logined by pressing the specific button.
