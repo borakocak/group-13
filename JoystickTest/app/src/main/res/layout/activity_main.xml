@@ -96,7 +96,7 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="15dp"
         android:contentDescription="@string/start_stop"
-        app:srcCompat="@drawable/selfpark" />
+        app:srcCompat="@drawable/stop" />
 
     <Button
         android:id="@+id/button1"
