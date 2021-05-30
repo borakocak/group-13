@@ -15,7 +15,7 @@
 In order to showcase of our final product, we have recoded a video demonstrating the full functionality of our system. We hope the video gives you a good idea of what we've been trying to achieve. Thanks for watching!
 
 ## Table of Contents
-1. [What does the product contain?](#what-?)
+1. [What does the product contain?](#what-)
 2. [Why did we need it?](#why-?)
 3. [What does it solve?](#what-does-it-solve-?)
 4. [How did we develop it?](#how-?)
