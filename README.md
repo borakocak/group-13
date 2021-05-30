@@ -55,15 +55,19 @@ Scenario 1 and 2: The car owner logins to the android and by using the joystick 
 Scenario 3: For security purposes the car owner can monitor their car at all times by logging in to the app and connecting with the car's built in function to check the vehicles envirnment surroundings, giving the car owner assurance everything is fine with the vehicle.  
 
 ## Application User Manual
-<p float="left">
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual01.png" width="225" height="425" />
-<img src="https://github.com/DIT112-V21/group-13/blob/Peiran-Wei-README-patch/images/app%20user%20manual02.png" width="225" height="425" />
-</p>
+<img width="332" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
 
-1. The login page of the UI indicates to the user that an account can be registered or logined by pressing the specific button.
-2. The car-view application UI indicates to the user that SMCE can be connected to via the MQTT broker.
-3. Once SMCE has been connected, a user can control the car manually by using the joystick button.
-4. By pressing the button 'Curise Control' and 'Stop', a user can manually require the car into curising mode or stop the car immediately.
+
+Click the “REGISTER” to register an account. Make sure you enter the same password twice. After you confirm your account, click 'back' to log into the system.
+
+<img width="325" alt="Screenshot 2021-05-30 at 02 24 47" src="https://user-images.githubusercontent.com/81154027/120106470-52c9ac80-c15d-11eb-8580-f6d3f74dd497.png">
+
+When you login into the system successfully, you need to start the SMCE car and click the connect button to connect with the car. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
+
+<img width="326" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
+
+<img width="1269" alt="Screenshot 2021-05-30 at 02 37 36" src="https://user-images.githubusercontent.com/81154027/120088374-085e1680-c0f0-11eb-8b59-e16d96e4d93e.png">
+
 
 ## Software Architecture
 Sequence Diagram
