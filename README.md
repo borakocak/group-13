@@ -78,6 +78,7 @@ Use the Android Studio to open the “JoystickTest” file and sync the “build
 ![Screenshot 2021-05-29 at 01 46 08](https://user-images.githubusercontent.com/81154027/120051122-acc45800-c01f-11eb-8578-0ff4b818964b.png)
 
 Next, you should start the local broker(Here I use Hivemq-ce as an example)
+For Mac users run ./run.sh   
 ![Screenshot 2021-05-29 at 01 48 36](https://user-images.githubusercontent.com/81154027/120051206-062c8700-c020-11eb-9665-45db7b5fd48a.png)
  
 The default MQTThost is your local-IP and the default MQTTport is 1883.
