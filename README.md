@@ -58,11 +58,13 @@ Scenario 3: For security purposes the car owner can monitor their car at all tim
 <img width="332" alt="Screenshot 2021-05-30 at 02 24 27" src="https://user-images.githubusercontent.com/81154027/120088310-676f5b80-c0ef-11eb-84b4-942a549ac37c.png">
 
 
-Click the “REGISTER” to register an account. Make sure you enter the same password twice. After you confirm your account, click 'back' to log into the system.
+1. Click the “REGISTER” to register an account. Make sure you enter the same password twice. After you confirm your account, click 'back' to log into the system.
 
 <img width="325" alt="Screenshot 2021-05-30 at 02 24 47" src="https://user-images.githubusercontent.com/81154027/120106470-52c9ac80-c15d-11eb-8580-f6d3f74dd497.png">
 
-When you login into the system successfully, you need to start the SMCE car and click the connect button to connect with the car. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
+2. When you login into the system successfully, you need to start the SMCE car and click the connect button be connected to the car via the MQTT broker. The camera will work after you click the black space above the joystick. After the image appears, you can control the car by moving the red joystick.
+
+3.By pressing the buttons 'Curise Control' and 'Stop', a user can manually control the car into curising mode or stop the car immediately.
 
 <img width="326" alt="Screenshot 2021-05-30 at 02 25 48" src="https://user-images.githubusercontent.com/81154027/120088355-bcab6d00-c0ef-11eb-973b-2210e08d0893.png">
 
