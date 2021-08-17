@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterActicity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText registerUsername;
     EditText registerPassword;
@@ -17,14 +17,12 @@ public class RegisterActicity extends AppCompatActivity {
     Button confirm;
     Button back;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_acticity);
 
-        MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(RegisterActicity.this);
+        MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(RegisterActivity.this);
 
         registerUsername = findViewById(R.id.registerUsername);
         registerPassword = findViewById(R.id.registerPassword);
@@ -33,18 +31,17 @@ public class RegisterActicity extends AppCompatActivity {
         back = findViewById(R.id.back);
 
 
-
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(passwordConfirmation.getText().toString().equals(registerPassword.getText().toString()) ){
                     boolean b = myDatabaseHelper.addOne(registerUsername.getText().toString(), registerPassword.getText().toString());
                     if(b) {
-                        Toast.makeText(RegisterActicity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                     }
 
                 }else{
-                    Toast.makeText(RegisterActicity.this,"Please make sure you enter the same password",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"Please make sure you enter the same password",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -52,19 +49,9 @@ public class RegisterActicity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterActicity.this,MainActivity2.class);
+                Intent intent = new Intent(RegisterActivity.this,MainActivity2.class);
                 startActivity(intent);
             }
         });
-
-
-
-
-
-
-
     }
-
-
-
 }
