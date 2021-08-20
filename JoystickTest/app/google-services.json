@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "12231037231",
+    "project_id": "joystickapp-f229e",
+    "storage_bucket": "joystickapp-f229e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12231037231:android:ba939f2343e37124b511da",
+        "android_client_info": {
+          "package_name": "com.example.joysticktest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "<redacted>"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12231037231:android:5004b84611e19100b511da",
+        "android_client_info": {
+          "package_name": "com.example.mqttconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "<redacted>"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12231037231:android:e4023ae62af9f3d9b511da",
+        "android_client_info": {
+          "package_name": "com.example.testfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "<redacted>"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12231037231-esit5smn2o1h87mu3etphspdk3tfkihp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

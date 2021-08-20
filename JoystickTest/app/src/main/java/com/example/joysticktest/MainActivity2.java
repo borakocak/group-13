@@ -8,20 +8,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity2 extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        Button login = (Button)findViewById(R.id.login);
+        Button login = findViewById(R.id.login);
         Button register = findViewById(R.id.register);
         EditText userName = findViewById(R.id.editTextTextPersonName);
         EditText passWord = findViewById(R.id.editTextTextPersonName2);
+        TextView googleButton = findViewById(R.id.googleButton);
         MyDatabaseHelper myDatabaseHelper = new MyDatabaseHelper(MainActivity2.this);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -45,13 +46,17 @@ public class MainActivity2 extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(MainActivity2.this,RegisterActicity.class);
-
+                Intent intent =  new Intent(MainActivity2.this,RegisterActivity.class);
                 startActivity(intent);
             }
         });
 
-
-
+        googleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity2.this,Register.class);
+                startActivity(intent);
+            }
+        });
     }
 }
