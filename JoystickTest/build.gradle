@@ -22,3 +22,14 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+plugins {
+    id "org.sonarqube" version "3.3"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "borakocak_group-13"
+        property "sonar.organization", "borakocak"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
